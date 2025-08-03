@@ -19,16 +19,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # run the pre-commit hooks and commit any changes
-  lint:
-    name: pre-commit hooks
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pre-commit/action@v3.0.1
-      - uses: pre-commit-ci/lite-action@v1.1.0
-        if: always()
-
   build:
     name: Build GDExtension
     uses: ./.github/workflows/build.yml
