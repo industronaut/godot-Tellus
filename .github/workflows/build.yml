@@ -71,13 +71,13 @@ jobs:
         if: ${{ matrix.target.platform == 'windows' }}
         shell: pwsh
         run: |
-          Remove-Item ${{ github.workspace }}/demo/addons/tellus/lib/* -Include *.exp,*.lib,*.pdb -Force
+          Remove-Item ${{ github.workspace }}/demo/addons/tellus/bin/* -Include *.exp,*.lib,*.pdb -Force
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: tellus-${{ env.BUILD_VERSION }}_${{ hashFiles('.gitmodules') }}
-          path: ${{ github.workspace }}/demo/addons/tellus/lib
+          path: ${{ github.workspace }}/demo/addons/tellus/bin
 
   # Merges all the build artifacts together into a single tellus artifact.
   # If you comment out this step, all the builds will be uploaded individually.

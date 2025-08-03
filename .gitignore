@@ -27,7 +27,7 @@ compile_commands.json
 
 # Ignore files generated for documentation
 /src/gen
-demo/addons/tellus
+demo/addons/tellus/bin
 # Binaries
 *.o
 *.os
